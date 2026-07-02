@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Pricing.css";
 
 /* ------------------------------------------------------------------
-   Reveal-on-scroll hook — adds "is-visible" to any ".reveal" element
-   inside the page once it enters the viewport.
+ 
 ------------------------------------------------------------------- */
 function useRevealOnScroll() {
   const containerRef = useRef(null);
@@ -428,7 +427,7 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
         <section className="pricing-overview">
           <div className="overview-grid">
             <OverviewCard icon="&#8377;" label="Starting From">
-              <AnimatedCounter value={3000} prefix="\u20B9" />
+              <AnimatedCounter value={3000} prefix="" />
             </OverviewCard>
             <OverviewCard icon="&#128101;" label="Limited Batch Size">
               Small Cohorts
@@ -502,7 +501,7 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
                 goldBadge="Most Recommended"
                 title="TOC + Compiler Design Package"
                 price="5,000"
-                description="Learn Theory of Computation and Compiler Design together, with a \u20B91,000 discount compared to the normal combined pricing."
+                description="Learn Theory of Computation and Compiler Design together, with a 1,000 discount compared to the normal combined pricing."
                 features={[
                   { icon: "\u2713", text: "\u20B91,000 discount vs. normal combined pricing" },
                   { icon: "\u2713", text: "Pay when this subject package begins" },
