@@ -458,12 +458,12 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
                 featured
                 ribbon="Limited Seat Offer"
                 title="Reserve Your Seat"
-                price="\u20B98,000"
+                price="8,000"
                 priceNote="Upfront"
                 description="For students who genuinely want to secure the opportunity — pay in full or reserve now."
                 highlight="Available for the first 5 students only."
                 features={[
-                  { icon: "\u2713", text: "Pay the full \u20B98,000 upfront, or \u20B95,000 initially to reserve your seat" },
+                  { icon: "\u2713", text: "Pay the full 8,000 upfront, or 5,000 initially to reserve your seat" },
                   { icon: "\u2713", text: "Priority seat reservation" },
                   { icon: "\u2713", text: "Access to the mentorship program" },
                   { icon: "\u2713", text: "Eligibility to continue with the remaining payment plan, if applicable" },
@@ -473,7 +473,7 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
 
               <PricingCard
                 title="Regular Admission"
-                price="\u20B910,000"
+                price="10,000"
                 description="The standard fee for students joining after the early reservation seats are filled."
                 features={[
                   { icon: "\u2713", text: "Full mentorship access" },
@@ -486,7 +486,7 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
 
               <PricingCard
                 title="Individual Subject"
-                price="\u20B93,000"
+                price="3,000"
                 description="Enroll in one individual subject and pay only when that subject begins."
                 features={[
                   { icon: "\u2699", text: "Data Structures & Algorithms (DSA)" },
@@ -501,7 +501,7 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
                 special
                 goldBadge="Most Recommended"
                 title="TOC + Compiler Design Package"
-                price="\u20B95,000"
+                price="5,000"
                 description="Learn Theory of Computation and Compiler Design together, with a \u20B91,000 discount compared to the normal combined pricing."
                 features={[
                   { icon: "\u2713", text: "\u20B91,000 discount vs. normal combined pricing" },
