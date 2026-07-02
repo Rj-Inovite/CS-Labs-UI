@@ -10,6 +10,8 @@ import Contact from './components/Contact';
 import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import Refund from './components/Refund';
+import Policy from './components/Policy';
+import Pricing from './components/Pricing';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
               <Route path="/saved" element={<Dashboard />} />
               <Route path="/settings" element={<Dashboard />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/pricing" elements={<Pricing/> }/>
+              <Route path="policy" elements={<Dashboard/>}/>
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/refund" element={<Refund />} />
             </Routes>
