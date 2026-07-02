@@ -36,8 +36,8 @@ const Navbar = () => {
     { icon: FaGraduationCap, text: 'Incubation Tracks', path: '/', hash: 'tracks' },
     { icon: FaFlask, text: 'Software Labs', path: '/', hash: 'labs' },
     { icon: FaFlask, text: 'Terms & Conditions ', path: '/', hash: 'terms' },
-{ icon: FaFlask, text: 'Pricing', path: '/', hash: 'pricing' },
-     { icon: FaFlask, text: 'Policy ', path: '/', hash: 'policy' },
+    { icon: FaFlask, text: 'Pricing', path: '/', hash: 'pricing' },
+    { icon: FaFlask, text: 'Policy ', path: '/', hash: 'policy' },
   
   ];
 
