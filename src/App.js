@@ -34,8 +34,8 @@ function App() {
               <Route path="/saved" element={<Dashboard />} />
               <Route path="/settings" element={<Dashboard />} />
               <Route path="/terms" element={<Terms />} />
-              <Route path="/pricing" elements={<Pricing/> }/>
-              <Route path="policy" elements={<Dashboard/>}/>
+              <Route path="/pricing" element={<Pricing /> }/>
+              <Route path="/policy" element={<Policy /> }/>
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/refund" element={<Refund />} />
             </Routes>
