@@ -22,7 +22,7 @@ const Footer = () => {
             <a href="#" className="social-icon"><FaFacebook /></a>
             <a href="#" className="social-icon"><FaTwitter /></a>
             <a href="#" className="social-icon"><FaLinkedin /></a>
-            <a href="#" className="social-icon"><FaInstagram /></a>
+           
             <a href="#" className="social-icon"><FaYoutube /></a>
           </div>
         </div>
@@ -42,6 +42,8 @@ const Footer = () => {
           <ul>
             <li onClick={() => navigate('/terms')}>Terms & Conditions</li>
             <li onClick={() => navigate('/privacy')}>Privacy Policy</li>
+            <li onClick={() => navigate('/pricing')}>Pricing</li>
+            <li onClick={() => navigate('/policy')}>Our Policy</li>
             <li onClick={() => navigate('/refund')}>Refund Policy</li>
           </ul>
         </div>

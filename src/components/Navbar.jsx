@@ -34,7 +34,11 @@ const Navbar = () => {
     { icon: FaBookOpen, text: 'Our Manifesto', path: '/', hash: 'manifesto' },
     { icon: FaUsers, text: 'Community', path: '/', hash: 'community' },
     { icon: FaGraduationCap, text: 'Incubation Tracks', path: '/', hash: 'tracks' },
-    { icon: FaFlask, text: 'Software Labs', path: '/', hash: 'labs' }
+    { icon: FaFlask, text: 'Software Labs', path: '/', hash: 'labs' },
+    { icon: FaFlask, text: 'Terms & Conditions ', path: '/', hash: 'terms' },
+{ icon: FaFlask, text: 'Pricing', path: '/', hash: 'pricing' },
+     { icon: FaFlask, text: 'Policy ', path: '/', hash: 'policy' },
+  
   ];
 
   const profileMenuItems = [

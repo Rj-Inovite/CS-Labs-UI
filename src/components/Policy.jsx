@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./Terms.css";
+import "./Policy.css";
 
 /* ------------------------------------------------------------------
    Small reusable hook: adds a "visible" class to an element when it
@@ -36,83 +36,56 @@ function useRevealOnScroll() {
    Presentational sub-components
 ------------------------------------------------------------------- */
 
-function DocumentIllustration() {
+function ShieldIllustration() {
   return (
     <svg
-      className="doc-illustration"
+      className="shield-illustration"
       viewBox="0 0 220 240"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Legal document illustration"
+      aria-label="Security shield illustration"
     >
       <defs>
-        <linearGradient id="docGradient" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#7A1432" />
           <stop offset="100%" stopColor="#5B0F24" />
         </linearGradient>
-        <linearGradient id="docGlow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.5" />
+        <linearGradient id="shieldGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.55" />
           <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
         </linearGradient>
       </defs>
 
-      <ellipse cx="110" cy="222" rx="72" ry="11" fill="#7A1432" opacity="0.08" />
+      <ellipse cx="110" cy="215" rx="70" ry="12" fill="#7A1432" opacity="0.08" />
 
-      {/* back sheet */}
-      <rect
-        x="46"
-        y="18"
-        width="120"
-        height="164"
-        rx="10"
-        fill="#F6E9D8"
-        opacity="0.7"
-        transform="rotate(-6 106 100)"
-      />
-
-      {/* main document */}
-      <rect
-        x="40"
-        y="24"
-        width="140"
-        height="188"
-        rx="12"
-        fill="url(#docGradient)"
-        className="doc-body"
-      />
-      <rect
-        x="40"
-        y="24"
-        width="140"
-        height="188"
-        rx="12"
-        fill="url(#docGlow)"
-        opacity="0.45"
-      />
-
-      {/* gold seal / ribbon */}
-      <circle cx="150" cy="150" r="22" fill="#D4AF37" opacity="0.95" />
-      <path d="M150 132 L156 148 L173 150 L159 160 L164 177 L150 167 L136 177 L141 160 L127 150 L144 148 Z" fill="#5B0F24" opacity="0.35" />
       <path
-        className="doc-check"
-        d="M140 150 L148 158 L162 142"
-        stroke="#5B0F24"
-        strokeWidth="4.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M110 8 L200 42 V110 C200 165 163 205 110 232 C57 205 20 165 20 110 V42 Z"
+        fill="url(#shieldGradient)"
+        className="shield-body"
+      />
+      <path
+        d="M110 8 L200 42 V110 C200 165 163 205 110 232 C57 205 20 165 20 110 V42 Z"
+        fill="url(#shieldGlow)"
+        opacity="0.5"
+      />
+      <path
+        d="M110 26 L184 54 V110 C184 155 154 189 110 212 C66 189 36 155 36 110 V54 Z"
         fill="none"
+        stroke="#D4AF37"
+        strokeWidth="1.5"
+        opacity="0.55"
       />
 
-      {/* text lines */}
-      <g stroke="#D4AF37" strokeWidth="4" strokeLinecap="round" opacity="0.85">
-        <line x1="58" y1="52" x2="118" y2="52" />
-        <line x1="58" y1="68" x2="150" y2="68" />
-        <line x1="58" y1="84" x2="140" y2="84" />
-        <line x1="58" y1="100" x2="150" y2="100" />
-      </g>
-      <g stroke="#ffffff" strokeWidth="3" strokeLinecap="round" opacity="0.35">
-        <line x1="58" y1="118" x2="112" y2="118" />
+      <g className="shield-check">
+        <path
+          d="M76 116 L100 140 L146 90"
+          stroke="#D4AF37"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
       </g>
     </svg>
   );
@@ -139,19 +112,19 @@ function SectionDivider() {
   );
 }
 
-function TermsCard({ index, icon, title, children }) {
+function PolicyCard({ index, icon, title, children }) {
   return (
-    <article className="terms-card reveal">
-      <div className="terms-card-header">
-        <span className="terms-card-icon" aria-hidden="true">
+    <article className="policy-card reveal">
+      <div className="policy-card-header">
+        <span className="policy-card-icon" aria-hidden="true">
           {icon}
         </span>
         <div>
-          <span className="terms-card-eyebrow">Section {index}</span>
-          <h2 className="terms-card-title">{title}</h2>
+          <span className="policy-card-eyebrow">Section {index}</span>
+          <h2 className="policy-card-title">{title}</h2>
         </div>
       </div>
-      <div className="terms-card-body">{children}</div>
+      <div className="policy-card-body">{children}</div>
     </article>
   );
 }
@@ -182,7 +155,7 @@ function ContactRow({ icon, label, value, href }) {
    Main Page Component
 ------------------------------------------------------------------- */
 
-export default function Terms({ onBackHome }) {
+export default function Policy({ onBackHome }) {
   const revealContainerRef = useRevealOnScroll();
 
   const handleBackHome = () => {
@@ -194,7 +167,7 @@ export default function Terms({ onBackHome }) {
   };
 
   return (
-    <div className="terms-page" ref={revealContainerRef}>
+    <div className="policy-page" ref={revealContainerRef}>
       {/* Floating ambient background shapes */}
       <div className="bg-shapes" aria-hidden="true">
         <span className="floating-shape shape-1" />
@@ -204,7 +177,7 @@ export default function Terms({ onBackHome }) {
       </div>
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <header className="terms-hero">
+      <header className="policy-hero">
         <button className="back-home-btn" onClick={handleBackHome} type="button">
           <span className="back-home-arrow" aria-hidden="true">
             &#8592;
@@ -216,77 +189,76 @@ export default function Terms({ onBackHome }) {
           <div className="hero-text">
             <p className="hero-eyebrow">CS Labs &middot; Legal &amp; Trust</p>
             <h1 className="hero-title">
-              Terms &amp; <span className="hero-title-accent">Conditions</span>
+              Privacy <span className="hero-title-accent">Policy</span>
             </h1>
             <p className="hero-subtitle">
-              These terms govern your use of CS Labs and its educational
-              services. Please read them carefully to understand your
-              rights and responsibilities as a member of our learning
-              community.
+              CS Labs is committed to protecting your personal information and
+              maintaining complete transparency in how we collect, use, and
+              safeguard it across our learning platform.
             </p>
             <p className="hero-updated">Last Updated: July 2026</p>
 
             <div className="trust-badges">
-              <TrustBadge icon="&#127942;" label="Trusted Learning" />
               <TrustBadge icon="&#128274;" label="Secure Platform" />
-              <TrustBadge icon="&#127891;" label="Student First" />
+              <TrustBadge icon="&#128737;" label="Privacy Protected" />
+              <TrustBadge icon="&#127942;" label="Trusted Learning" />
             </div>
           </div>
 
           <div className="hero-illustration">
             <div className="illustration-glow" aria-hidden="true" />
-            <DocumentIllustration />
+            <ShieldIllustration />
           </div>
         </div>
       </header>
 
       {/* ---------------- CONTENT SECTION ---------------- */}
-      <main className="terms-content">
+      <main className="policy-content">
         <SectionDivider />
 
-        <TermsCard index="01" icon="&#127891;" title="Services Provided">
+        <PolicyCard index="01" icon="&#128203;" title="Information We Collect">
           <p>
-            CS Labs offers online educational mentorship and training
-            programs, such as GATE CSE Mentorship. The details, syllabus,
-            and pricing of each program are clearly listed on the website.
+            When a student registers for a course on CS Labs, we collect
+            personal information including the student&rsquo;s name, email
+            address, phone number, and payment details. This information is
+            gathered directly during the enrollment process to set up and
+            manage your learning account.
           </p>
-        </TermsCard>
+        </PolicyCard>
 
-        <TermsCard index="02" icon="&#128100;" title="User Obligations">
-          <p>As a user of CS Labs, you agree to:</p>
-          <ul className="terms-list">
-            <li>Provide accurate registration information</li>
+        <PolicyCard index="02" icon="&#9881;" title="How We Use Your Information">
+          <p>The information we collect is used strictly to:</p>
+          <ul className="policy-list">
+            <li>Process enrollments and payments</li>
             <li>
-              Maintain the confidentiality of your login credentials or
-              access links
+              Provide access to course materials, live classes, and developer
+              repositories
             </li>
             <li>
-              Use all course materials for personal educational use only,
-              and not copy, distribute, share, or resell them without
-              permission
+              Send important administrative messages such as EMI reminders
+              and class schedules
             </li>
+            <li>Provide customer support</li>
           </ul>
-        </TermsCard>
+        </PolicyCard>
 
-        <TermsCard index="03" icon="&#8377;" title="Pricing and Payments">
+        <PolicyCard index="03" icon="&#128274;" title="Data Protection">
           <p>
-            All prices are displayed in Indian Rupees (INR). CS Labs
-            reserves the right to modify pricing for future batches. Any
-            enrolled student&rsquo;s confirmed payment plan, including
-            approved EMI options, will be honored according to the terms
-            agreed upon at the time of purchase.
+            All payments are securely processed through recognized
+            third-party payment gateways such as Razorpay. CS Labs does not
+            store any credit card information or sensitive banking
+            information on its own servers.
           </p>
-        </TermsCard>
+        </PolicyCard>
 
-        <TermsCard index="04" icon="&#9878;" title="Code of Conduct">
+        <PolicyCard index="04" icon="&#129309;" title="Sharing of Information">
           <p>
-            CS Labs reserves the right to suspend or terminate access to
-            live classes, community groups, and technical repositories if
-            a student engages in disruptive behavior, harassment, misuse
-            of the platform, or unauthorized sharing of proprietary
-            educational materials.
+            CS Labs does not sell, trade, or rent your personal information
+            to third parties. Information is shared only with trusted
+            service providers, such as payment gateways and communication
+            APIs, whenever necessary to operate the educational platform.
           </p>
-        </TermsCard>
+        </PolicyCard>
 
         <SectionDivider />
 
@@ -297,7 +269,7 @@ export default function Terms({ onBackHome }) {
               Contact Information
             </h2>
             <p className="contact-subheading">
-              Have a question about these terms? Reach out to us anytime.
+              Have a question about your privacy? Reach out to us anytime.
             </p>
 
             <div className="contact-rows">
@@ -324,10 +296,11 @@ export default function Terms({ onBackHome }) {
       </main>
 
       {/* ---------------- FOOTER ---------------- */}
-      <footer className="terms-footer">
+      <footer className="policy-footer">
         <div className="footer-inner">
+          <p className="footer-brand">CS Labs</p>
           <p className="footer-copy">
-            &copy; 2026 CS Labs | Learn &bull; Practice &bull; Master
+            &copy; {new Date().getFullYear()} CS Labs. All rights reserved.
           </p>
         </div>
       </footer>
