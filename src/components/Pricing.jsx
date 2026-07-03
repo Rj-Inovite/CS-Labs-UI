@@ -525,14 +525,14 @@ export default function Pricing({ onEnroll, onContact, onApply }) {
 
             <div className="emi-grid">
               <EmiCard
-                title="\u20B98,000 Plan"
+                title="8,000 Plan"
                 steps={[
                   { amount: "\u20B95,000", label: "Initial payment" },
                   { amount: "\u20B93,000", label: "Second installment" },
                 ]}
               />
               <EmiCard
-                title="\u20B910,000 Plan"
+                title="10,000 Plan"
                 steps={[
                   { amount: "\u20B95,000", label: "Initial payment" },
                   { amount: "\u20B95,000", label: "Second installment" },

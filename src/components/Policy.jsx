@@ -263,33 +263,7 @@ export default function Policy({ onBackHome }) {
         <SectionDivider />
 
         {/* ---------------- CONTACT CARD ---------------- */}
-        <section className="contact-card reveal" aria-labelledby="contact-heading">
-          <div className="contact-card-inner">
-            <h2 id="contact-heading" className="contact-heading">
-              Contact Information
-            </h2>
-            <p className="contact-subheading">
-              Have a question about your privacy? Reach out to us anytime.
-            </p>
-
-            <div className="contact-rows">
-              <ContactRow
-                icon="&#9993;"
-                label="Email"
-                value="support@cslabs.in"
-                href="mailto:support@cslabs.in"
-              />
-              <ContactRow
-                icon="&#128222;"
-                label="Phone"
-                value="+91 99220 18908"
-                href="tel:+919922018908"
-              />
-              <ContactRow
-                icon="&#128205;"
-                label="Address"
-                value="Your Business Address"
-              />
+        
             </div>
           </div>
         </section>
